@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Lightweight multimodal radar interference detection at low SINRs in CBRS using spectrogram and IQ fusion, quantization-aware training, and SHAP-based feature pruning.">
+  <meta name="keywords" content="CBRS, radar interference detection, multimodal learning, quantization-aware training, SHAP, spectrum sharing">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lightweight Multimodal Radar Interference Detection at Low SINRs in CBRS</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/cbrs-radar/site.css">
+</head>
+<body>
+<section class="hero publication-header">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Lightweight Multimodal Radar Interference Detection at Low SINRs in CBRS</h1>
+
+          <div class="author-grid author-grid-header">
+            <div class="author-card">
+              <img src="./static/cbrs-radar/madan.png" alt="Madan Baduwal">
+              <h3 class="title is-5"><a href="https://madanbaduwal.github.io">Madan Baduwal</a></h3>
+            </div>
+            <div class="author-card">
+              <img src="./static/cbrs-radar/vini.png" alt="Vini Chaudhary">
+              <h3 class="title is-5">Vini Chaudhary</h3>
+            </div>
+          </div>
+          <div class="is-size-5 publication-affiliation">
+            Department of Computer Science and Engineering, Mississippi State University
+          </div>
+
+          <div class="publication-tags">
+            <span class="tag is-light">CBRS Spectrum Sharing</span>
+            <span class="tag is-light">Low-SINR Radar Detection</span>
+            <span class="tag is-light">INT8 Quantization</span>
+            <span class="tag is-light">SHAP Feature Pruning</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="./static/cbrs-radar/paper.pdf" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="#abstract" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fas fa-align-left"></i></span>
+                  <span>Abstract</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="#results" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fas fa-chart-line"></i></span>
+                  <span>Results</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="#bibtex" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="ai ai-google-scholar"></i></span>
+                  <span>BibTeX</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://github.com/madanbaduwal/cbrs-radar" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fab fa-github"></i></span>
+                  <span>Code</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://drive.google.com/file/d/1N_TAN-3sMLix6oHh7Dzasgl_zSvrNLJn/view?usp=sharing" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="far fa-folder-open"></i></span>
+                  <span>Data</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <figure class="image publication-banner">
+        <img src="./static/cbrs-radar/intro.png" alt="Overview of multimodal radar interference detection in CBRS">
+      </figure>
+      <h2 class="subtitle has-text-centered teaser-caption">
+        A lightweight multimodal framework fuses spectrogram and IQ representations to detect incumbent radar interference under severe low-SINR CBRS conditions.
+      </h2>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="abstract">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Detecting interference with incumbent radar signals in the shared Citizens Broadband Radio Service (CBRS) spectrum under low signal-to-interference-plus-noise ratio (SINR) conditions is critical for reliable spectrum sharing with a growing number of secondary users. The Federal Communications Commission (FCC) mandates that Environmental Sensing Capability (ESC) sensors detect naval radar signals with at least 99% accuracy within 60 seconds, typically at SINR of at least 20 dB.
+          </p>
+          <p>
+            This work addresses the more challenging scenario of SINR as low as 0 dB, corresponding to severe interference from dense secondary-user activity. We propose a multimodal machine learning framework that fuses in-phase/quadrature (IQ) samples and spectrogram representations captured at ESC sensors. To support lightweight deployment, the framework uses quantization-aware training and SHAP value-based feature pruning across modalities, reducing input dimensionality while preserving detection performance.
+          </p>
+          <p>
+            Experimental validation on low- and high-SINR CBRS datasets demonstrates consistent detection accuracy of at least 99%, with reduced computational complexity and inference latency of 70.811 ms on CPU and 1.812 ms on GPU.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section is-light" id="method">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3 has-text-centered">Method</h2>
+        <div class="content has-text-justified">
+          <p>
+            The proposed framework proceeds in two stages. First, spectrogram and IQ encoders are pretrained independently as unimodal classifiers under FP32 and INT8 quantization-aware training. Second, SHAP attribution identifies the most informative penultimate-layer features from both encoders, and the selected features are fused through a guided cross-attention head.
+          </p>
+        </div>
+        <figure class="image figure-panel">
+          <img src="./static/cbrs-radar/framework.png" alt="Multimodal framework with spectrogram and IQ encoders, SHAP feature selection, and cross-attention fusion">
+        </figure>
+        <p class="has-text-centered figure-caption">
+          Spectrogram and IQ encoders provide complementary time-frequency and temporal/phase cues. SHAP pruning removes redundant features before guided cross-attention fusion.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="results">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Results</h2>
+    <div class="columns is-centered">
+      <div class="column">
+        <div class="result-card">
+          <p class="metric">>=99%</p>
+          <p class="metric-label">Detection accuracy and recall across low- and high-SINR datasets</p>
+        </div>
+      </div>
+      <div class="column">
+        <div class="result-card">
+          <p class="metric">60.9%</p>
+          <p class="metric-label">Feature reduction from SHAP-guided pruning</p>
+        </div>
+      </div>
+      <div class="column">
+        <div class="result-card">
+          <p class="metric">1.812 ms</p>
+          <p class="metric-label">GPU inference latency for INT8+SHAP</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-multiline result-figures">
+      <div class="column is-half">
+        <figure class="image figure-panel">
+          <img src="./static/cbrs-radar/accuracy.png" alt="Accuracy comparison for unimodal and multimodal FP32 models">
+        </figure>
+        <p class="figure-caption">Accuracy of unimodal and multimodal FP32 models across real-world and synthetic datasets.</p>
+      </div>
+      <div class="column is-half">
+        <figure class="image figure-panel">
+          <img src="./static/cbrs-radar/recall.png" alt="Recall comparison for unimodal and multimodal FP32 models">
+        </figure>
+        <p class="figure-caption">Recall of unimodal and multimodal FP32 models across real-world and synthetic datasets.</p>
+      </div>
+      <div class="column is-one-third">
+        <figure class="image figure-panel">
+          <img src="./static/cbrs-radar/sinr.png" alt="SINR-wise accuracy radar plot">
+        </figure>
+        <p class="figure-caption">SINR-wise accuracy under high- and low-SINR conditions.</p>
+      </div>
+      <div class="column is-one-third">
+        <figure class="image figure-panel">
+          <img src="./static/cbrs-radar/shap-accuracy.png" alt="Accuracy for FP32, INT8, and INT8 with SHAP">
+        </figure>
+        <p class="figure-caption">Accuracy after INT8 quantization and SHAP feature pruning.</p>
+      </div>
+      <div class="column is-one-third">
+        <figure class="image figure-panel">
+          <img src="./static/cbrs-radar/shap-recall.png" alt="Recall for FP32, INT8, and INT8 with SHAP">
+        </figure>
+        <p class="figure-caption">Recall after INT8 quantization and SHAP feature pruning.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="bibtex">
+  <div class="container is-max-desktop content">
+    <h2 class="title is-3 has-text-centered">BibTeX</h2>
+    <pre><code>@INPROCEEDINGS{baduwal2026multimodal,
+  author={Baduwal, Madan and Chaudhary, Vini},
+  booktitle={IEEE International Conference on Communications (ICC)}, 
+  title={Lightweight Multimodal Radar Interference Detection at Low SINRs in CBRS}, 
+  year={2026},
+  volume={},
+  number={},
+  pages={},
+  organization={IEEE}
+  }
+}</code></pre>
+  </div>
+</section>
+
+</body>
+</html>
